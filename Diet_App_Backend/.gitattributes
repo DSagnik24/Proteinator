@@ -1,2 +1,6 @@
+# Enforce LF for all text files
+* text=auto eol=lf
+
+# Specific overrides
 /mvnw text eol=lf
 *.cmd text eol=crlf

@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./Diet_App_Backend
+    ports:
+      - "8081:8081"
+    container_name: calorie-backend
+    networks:
+      - dietnet
+
+  frontend:
+    build: ./calorie-tracker
+    ports:
+      - "5173:5173"
+    container_name: calorie-frontend
+    networks:
+      - dietnet
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8081
+
+networks:
+  dietnet:
+    driver: bridge
